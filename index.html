@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Formulário de Cadastro</title>
+    <script>
+        function validar(){
+            if(document.getElementById('nome').value == ""){
+                alert("O campo Nome Completo está vazio")
+            }
+            if(document.getElementById('endereco').value == ""){
+                alert("O campo Endereço está vazio")
+            }
+            if(document.getElementById('bairro').value == ""){
+                alert("O campo Bairro está vazio")
+            }
+            if(document.getElementById('cep').value == ""){
+                alert("O campo CEP está vazio")
+            }
+            if(document.getElementById('cidade').value == ""){
+                alert("O campo Cidade está vazio")
+            }
+            if(document.getElementById('rg').value == ""){
+                alert("O campo RG está vazio")
+            }else{
+                var rg = document.getElementById('rg').value;
+                const rgModel = /^\d{2}\.\d{3}\.\d{3}\-\d{1}$/;
+                if(rgModel.test(rg)){
+                }else{
+                    alert("Verifique se o RG foi digitado no seguinte modelo: 00.000.000-X")
+                }                
+            }
+            if(document.getElementById('cpf').value == ""){
+                alert("O campo CPF está vazio")
+            }else{
+                var cpf = document.getElementById('cpf').value;
+                const cpfModel = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
+                if(cpfModel.test(cpf)){
+                }else{
+                    alert("Verifique se o CPF foi digitado no seguinte modelo: 000.000.000-00")
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container text-start bg-body-tertiary">
+        <div class="row mb-3" style="background-color: #e3f2fd;">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Formulário</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form>
+                    <div class="mb-3">
+                        <label for="txtNome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" aria-describedby="nome" placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="mb-3">
+                                <label for="txtEndereco" class="form-label">Endereço</label>
+                                <input type="text" class="form-control" id="endereco" aria-describedby="endereco" placeholder="Digite seu endereço">
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="mb-3">
+                                <label for="txtBairro" class="form-label">Bairro</label>
+                                <input type="text" class="form-control" id="bairro" aria-describedby="bairro" placeholder="Digite seu bairro">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="txtCEP" class="form-label">CEP</label>
+                                <input type="text" class="form-control" id="cep" aria-describedby="cep" placeholder="Digite seu CEP">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="txtCidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" aria-describedby="cidade" placeholder="Digite sua Cidade">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <label for="cboEstado" class="form-label">Estado</label>
+                                <select class="form-select" aria-label="estado">
+                                    <option value="" selected disabled>Escolha um</option>
+                                    <option value="1">AC</option>
+                                    <option value="2">AL</option>
+                                    <option value="3">AP</option>
+                                    <option value="4">AM</option>
+                                    <option value="5">BA</option>
+                                    <option value="6">CE</option>
+                                    <option value="7">DF</option>
+                                    <option value="8">ES</option>
+                                    <option value="9">GO</option>
+                                    <option value="10">MA</option>
+                                    <option value="11">MG</option>
+                                    <option value="12">MT</option>
+                                    <option value="13">MS</option>
+                                    <option value="14">PA</option>
+                                    <option value="15">PB</option>
+                                    <option value="16">PR</option>
+                                    <option value="17">PE</option>
+                                    <option value="18">PI</option>
+                                    <option value="19">RJ</option>
+                                    <option value="20">RN</option>
+                                    <option value="21">RS</option>
+                                    <option value="22">RO</option>
+                                    <option value="23">RR</option>
+                                    <option value="24">SC</option>
+                                    <option value="25">SE</option>
+                                    <option value="26">SP</option>
+                                    <option value="27">TO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="txtRG" class="form-label">RG</label>
+                                <input type="text" class="form-control" id="rg" aria-describedby="rg" placeholder="00.000.000-X">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="txtCPF" class="form-label">CPF</label>
+                                <input type="text" class="form-control" id="cpf" aria-describedby="cpf" placeholder="000.000.000-00">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <button class="btn btn-primary" type="submit" onclick="validar()">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
